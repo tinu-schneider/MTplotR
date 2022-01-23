@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+LOCAL_APP*/
+
+.Rdata
+.httr-oauth
+.DS_Store

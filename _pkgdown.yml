@@ -1,0 +1,29 @@
+pandoc: 2.1.1
+pkgdown: 1.0.0
+pkgdown_sha: ~
+articles: []
+reference:
+  - title: "Daten einlesen und aufbereiten"
+    desc: "Die Daten aus dem Monitoringtool einlesen und für den Berich aufbereiten."
+    contents: 
+      - starts_with("alle_daten")
+  - title: "Die Daten vorbereiten"
+    desc: "Für Gafiken und Tabellen werden die Daten spezifisch vorbereitet."
+    contents: 
+      - starts_with("prep_")
+  - title: "Grafiken"
+    desc: "Die verschiedenen Grafiken für den Bericht."
+    contents: 
+      - starts_with("plot_")
+  - title: "Verschiedene"
+    desc: "Farben, Grafik-Thema, Helpers, Getters,  etc"
+    contents:
+      - col_vbsa
+      - init_farben
+      - theme_vbsa
+      - starts_with("gib_")
+      - schreibe_das_bezugsjahr
+  - exclude:
+    - pipe
+    - MTplotR
+

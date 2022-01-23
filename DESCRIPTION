@@ -1,0 +1,27 @@
+Package: MTplotR
+Type: Package
+Title: Plotte die Daten des Monitoring-Tools
+Version: 0.6.0
+Authors@R: person("Tinu", "Schneider", role = c("aut", "cre"), email = "tinu@tinuschneider.ch")
+BugReports: direkt an den Autor
+Description: Mit diesem Paket werden die Daten des VBSA-Monitoring-Tools für den jährlichen Report
+   aufbereitet. Damit sind Daten im Monitoring-Tool und im Bericht synchronisiert.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: testthat,
+          vdiffr,
+          scales
+Imports: magrittr,
+         extrafont, 
+         readxl, 
+         dplyr, 
+         tidyr, 
+         forcats,
+         ggplot2, 
+         knitr,
+         waterfalls, 
+         ggiraph,
+         widgetframe
+Roxygen: list(markdown = FALSE)
+RoxygenNote: 7.1.2
