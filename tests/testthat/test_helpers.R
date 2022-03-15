@@ -18,7 +18,7 @@ test_that("'gib_wert() liefert für dat$ch richtig'", {
                             2017, runder = 2), 121.53)
 
     expect_error(gib_wert(dat$ch, "Verbrannte Menge", 2009))
-    expect_error(gib_wert(dat$ch, "Verbrannte Menge", 2026)) # erst bis 2025 implementiert
+    expect_error(gib_wert(dat$ch, "Verbrannte Menge", 2036))
     }
 )
 

@@ -24,7 +24,7 @@ schreibe_das_bezugsjahr <- function(jahr, out_dir, file_name = "bezugsjahr.tex")
 #' @export
 #'
 gib_basisjahr <- function() {
-    2010
+    2020
 }
 
 
@@ -57,7 +57,7 @@ gib_spaltennamen <- function(daten) {
 #'
 gib_wert <- function(daten, was, jahr, kt = "CH", runder = 0) {
     if (jahr < 2010) stop("Das Jahr darf nicht kleiner als 2010 sein.")
-    if (jahr > 2025) stop("Das Jahr darf nicht kleiner als 2010 sein.")
+    if (jahr > 2035) stop("Das Jahr darf nicht grösser als 2035 sein.")
 
     if (kt == "CH") {
         res <- dplyr::filter(daten, Was == was, Jahr == jahr)$Wert

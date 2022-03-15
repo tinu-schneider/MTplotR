@@ -1,11 +1,12 @@
 Package: MTplotR
 Type: Package
 Title: Plotte die Daten des Monitoring-Tools
-Version: 0.6.0
+Version: 0.7.0
 Authors@R: person("Tinu", "Schneider", role = c("aut", "cre"), email = "tinu@tinuschneider.ch")
 BugReports: direkt an den Autor
 Description: Mit diesem Paket werden die Daten des VBSA-Monitoring-Tools für den jährlichen Report
-   aufbereitet. Damit sind Daten im Monitoring-Tool und im Bericht synchronisiert.
+   aufbereitet. Damit sind Daten im Monitoring-Tool und im Bericht synchronisiert.   
+   Das Tool benötigt R-Version > 4.0.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

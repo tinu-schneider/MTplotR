@@ -46,7 +46,7 @@ alle_daten_aufbereiten <- function(roh) {
 
     dat <- dplyr::bind_rows(ch_roh, witt_roh, div_roh) %>%
             # print(n = 1e6) %>%
-            tidyr::gather(Jahr, Wert,  '2010':'2025', -Was)
+            tidyr::gather(Jahr, Wert,  '2010':'2035', -Was)
     dat
 }
 
@@ -57,7 +57,7 @@ alle_daten_aufbereiten <- function(roh) {
 #'
 .daten_alle_aufbereiten <- function(roh) {
 
-    dat <- tidyr::gather(roh, Jahr, Wert,  '2010':'2025', -Was, -Kurz, -Anlage) %>%
+    dat <- tidyr::gather(roh, Jahr, Wert,  '2010':'2035', -Was, -Kurz, -Anlage) %>%
             dplyr::mutate(Wert = suppressWarnings(as.numeric(Wert)) ) # we introduce NA's
     dat
 }
@@ -73,11 +73,11 @@ alle_daten_aufbereiten <- function(roh) {
     spalten_alle <- c("Was", "Anlage", "Kurz", "Jahr", "Wert")
 
     # Zeilen; all(duplicated(ch_2010) == FALSE)
-    # CH: 85 'Was', 16 'Jahr'
-    zeilen_ch <- 85 * 16
+    # CH: 86 'Was', 26 'Jahr'
+    zeilen_ch <- 86 * 26
 
-    # Alle: 15 'Was', 32 'Kurz' == 'Anlage', 16 'Jahr'
-    anz_zeilen_alle <- 15 * 32 * 16
+    # Alle: 15 'Was', 32 'Kurz' == 'Anlage', 26 'Jahr'
+    anz_zeilen_alle <- 15 * 32 * 26
 
     # Pruefen
     testthat::expect_equal(colnames(dat$ch),   spalten_ch)
