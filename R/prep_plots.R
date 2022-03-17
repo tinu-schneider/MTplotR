@@ -22,7 +22,8 @@ prep_daten_zr <- function(daten, spalten, max_jahr, runder = 2) {
         dplyr::rename(Typ = Was) %>%
         dplyr::mutate(Typ = factor(Typ, levels = spalten )) %>%
         dplyr::mutate(Wert = round(Wert, runder)) %>%
-        dplyr::mutate(TT = NA)
+        dplyr::mutate(TT = NA) %>%
+        dplyr::mutate(Jahr = as.double(Jahr))
     dat
 }
 
