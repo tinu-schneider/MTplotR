@@ -209,7 +209,26 @@
 
 
 
+#' Helper: Gib die Labels für die x-Achse
+#'
+#' @param daten Die aufbereiteten Daten
+#' @param by Schritte der Labels
+#'
+#' @return Ein numerischer Vector mit den Labels == Brakes
+#'
+#' @export
+#'
+.gib_x_Labels_zr <- function(daten, by = 2) {
 
+    x_min <- min(daten$Jahr)
+
+    if ((x_min %% 2) != 0) {
+        x_min <- x_min + 1
+    }
+
+    x_labels <- sort(c(seq(x_min, 2035, by = 2), BEZUGSJAHR))
+    x_labels
+}
 
 
 

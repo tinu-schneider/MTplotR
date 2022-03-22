@@ -59,8 +59,15 @@ plot_zr <- function(daten,
 
 
     # und alles feintunen
+
+    # x Achse
+    x_labels <- .gib_x_Labels_zr(daten, by = 2)
+
     p <- p + scale_y_continuous(limits = c(y_min, y_max),
                                 labels = scales::format_format(big.mark = "'", scientific = FALSE)) +
+             scale_x_continuous(breaks = x_labels,
+                                labels = as.character(x_labels),
+                                minor_breaks = min(daten$Jahr:2035)) +
              theme_vbsa() +
              labs(x = x_label, y = NULL,
                   subtitle = y_label)
@@ -96,4 +103,14 @@ plot_zr <- function(daten,
 }
 
 
+
+
+# p <- plot_zr(dp,
+#              farben  = col_vbsa("blau"),
+#              typ     = "punkte",
+#              y_label = "Mio. Tonnen",
+#              y_min   = 3.5,
+#              y_max   = 4.4)
+#
+# plot_grafik(p, gib_hoehe("Punkte"), interaktiv = FALSE)
 
