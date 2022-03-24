@@ -24,7 +24,7 @@ schreibe_das_bezugsjahr <- function(jahr, out_dir, file_name = "bezugsjahr.tex")
 #' @export
 #'
 gib_basisjahr <- function() {
-    2020
+    2010
 }
 
 
