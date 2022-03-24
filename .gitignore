@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 LOCAL_APP*/
+tests/*
 
 .Rdata
 .httr-oauth
