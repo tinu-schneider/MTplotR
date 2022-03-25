@@ -61,13 +61,16 @@ plot_zr <- function(daten,
     # und alles feintunen
 
     # x Achse
-    x_labels <- .gib_x_Labels_zr(daten, by = 2)
+    x_labels <- .gib_x_labels_zr(daten)
+    x_breaks <- .gib_x_breaks_zr(daten)
+
+    x_min_breaks <- min(daten$Jahr):2035
 
     p <- p + scale_y_continuous(limits = c(y_min, y_max),
                                 labels = scales::format_format(big.mark = "'", scientific = FALSE)) +
-             scale_x_continuous(breaks = x_labels,
-                                labels = as.character(x_labels),
-                                minor_breaks = min(daten$Jahr:2035)) +
+             scale_x_continuous(breaks = x_breaks,
+                                labels = x_labels,
+                                minor_breaks = x_min_breaks) +
              theme_vbsa() +
              labs(x = x_label, y = NULL,
                   subtitle = y_label)
