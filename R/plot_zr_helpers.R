@@ -212,26 +212,62 @@
 #' Helper: Gib die Labels für die x-Achse
 #'
 #' @param daten Die aufbereiteten Daten
-#' @param by Schritte der Labels
 #'
-#' @return Ein numerischer Vector mit den Labels == Brakes
+#' @return Ein character-Vector mit den Labels
 #'
 #' @export
 #'
-.gib_x_Labels_zr <- function(daten, by = 2) {
+.gib_x_labels_zr <- function(daten) {
 
-    x_min <- min(daten$Jahr)
+    jahre <- daten$Jahr
+
+    x_min <- min(jahre)
 
     if ((x_min %% 2) != 0) {
         x_min <- x_min + 1
     }
 
-    x_labels <- sort(c(seq(x_min, 2035, by = 2), BEZUGSJAHR))
+
+    x_labels <- sort(c(seq(x_min, 2035, by = 2), BEZUGSJAHR, 2035))
+    # x_labels <- as.character(x_labels)
+
+    for (i in seq_along(x_labels)) {
+        jahr <- x_labels[i]
+        if ( (as.numeric(jahr) %% 5) != 0) {
+            x_labels[i] <- paste0("'", substr(jahr, 3, 4))
+        }
+    }
+
     x_labels
 }
 
+#' Helper: Gib die Breaks für die x-Achse
+#'
+#' @param daten Die aufbereiteten Daten
+#'
+#' @return Ein numerischer Vector mit den Brakes
+#'
+#' @export
+#'
+.gib_x_breaks_zr <- function(daten) {
+
+    jahre <- daten$Jahr
+
+    x_min <- min(jahre)
+
+    if ((x_min %% 2) != 0) {
+        x_min <- x_min + 1
+    }
 
 
+    x_breaks <- sort(c(seq(x_min, 2035, by = 2), BEZUGSJAHR, 2035))
+    x_breaks
+}
+
+
+# da <- tibble::tibble(Jahr = 1997:2040)
+# .gib_x_labels_zr(da)
+# .gib_x_breaks_zr(da)
 
 
 
