@@ -91,6 +91,16 @@ plot_co2_boni <- function(daten, farben = NULL, y_legend_pos = 0.3) {
               legend.text.align = 0
         )
 
+    # labels x-Achse
+    x_labels <- .gib_x_labels_zr(daten)
+    x_breaks <- .gib_x_breaks_zr(daten)
+    x_min_breaks <- min(daten$Jahr):2035
+
+    p <- p +
+        scale_x_continuous(breaks = x_breaks,
+                           labels = x_labels,
+                           minor_breaks = x_min_breaks)
+
     p
 
 }
@@ -98,3 +108,4 @@ plot_co2_boni <- function(daten, farben = NULL, y_legend_pos = 0.3) {
 # dp <- prep_daten_co2_alle_boni(dat$ch, dat$bez)
 # p <- plot_co2_boni(dp, y_legend_pos = 0.35)
 # print(p)
+
