@@ -46,7 +46,9 @@ alle_daten_aufbereiten <- function(roh) {
 
     dat <- dplyr::bind_rows(ch_roh, witt_roh, div_roh) %>%
             # print(n = 1e6) %>%
-            tidyr::gather(Jahr, Wert,  '2010':'2035', -Was)
+            tidyr::gather(Jahr, Wert,  '2010':'2035', -Was) %>%
+            dplyr::mutate(Wert = replace(Wert, Was == "Zielpfad" & Jahr > 2020, NA)) %>%
+            dplyr::mutate(Wert = replace(Wert, Was == "Zielpfad Mio. Tonnen" & Jahr > 2020, NA))
     dat
 }
 
