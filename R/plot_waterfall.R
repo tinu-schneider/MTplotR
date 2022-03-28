@@ -53,7 +53,7 @@ plot_waterfall_ch <- function(daten, farben = NULL, y_min = NULL, shift = 0.003)
         p <- p +
             annotate("text",
                      x = c(1, 5),
-                     y = totals * (1 + shift / 10) ,
+                     y = y_min + (totals - y_min) / 2 ,
                      label = labels,
                      family = "Roboto",
                      size = 3.0
