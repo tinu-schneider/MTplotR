@@ -15,7 +15,7 @@
 #'
 #' @export
 #'
-plot_waterfall_ch <- function(daten, farben = NULL, shift = 0.003) {
+plot_waterfall_ch <- function(daten, farben = NULL, y_min = NULL, shift = 0.003) {
 
     if (is.null(farben)) {
         farb <- .gib_farben_wf()
@@ -26,7 +26,10 @@ plot_waterfall_ch <- function(daten, farben = NULL, shift = 0.003) {
         farben      <- c(farbe_total, farben_alle, farbe_total)
     }
 
-    y_min <- min(daten[c(1, 5), "values"]) * (1 - shift)
+    if (is.null(y_min)) {
+        y_min <- min(daten[c(1, 5), "values"]) * (1 - shift)
+    }
+    # y_min <- min(daten$values) * (1 - shift)
 
     totals <- daten[c(1, 5), "values"]
 
