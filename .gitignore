@@ -8,3 +8,4 @@ tests/*
 .Rdata
 .httr-oauth
 .DS_Store
+NAMESPACE
