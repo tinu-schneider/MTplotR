@@ -6,6 +6,7 @@
 #' @param daten Die präparierten Daten. Wir erwarten das Total Vorjahr in der ersten
 #'     und das Total Bezugsjahr in der letzten Zeile
 #' @param farben Die Farben können hier angegeben werden; die Anzahl muss genau stimmen
+#' @param y_min Das Minimum der y-Achse, optional.
 #' @param shift Dieser Wert bestimmt, um wieviel die Grafik um die grossen Werte vertikal zentriert wird.
 #'
 #' @return Ein `ggplot2`-Objekt, das anschliessend mit `print()` geplottet werden kann.
