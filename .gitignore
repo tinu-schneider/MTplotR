@@ -4,6 +4,7 @@
 .Ruserdata
 LOCAL_APP*/
 tests/*
+man/*
 
 .Rdata
 .httr-oauth
