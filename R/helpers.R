@@ -99,7 +99,7 @@ hoehen <- function() {
              "Linien" =  1.84,
              "Temp"   =  2.2,
              "Vgl_bj" =  5.25,
-             "Bars"   =  1.84,
+             "Bars"   =  1.90, # 1.84,
              "Bilanz" =  2.5,
              "Szen"   =  1.84,
              "Waterf_ch"   = 2.5,
